@@ -1,0 +1,7 @@
+*.o
+lib*.a
+*.info
+*.gcda
+*.gcno
+test
+report
