@@ -3,5 +3,5 @@ lib*.a
 *.info
 *.gcda
 *.gcno
-test
+tests
 report

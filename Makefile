@@ -24,13 +24,13 @@ clean		:
 
 fclean		:	clean
 				$(RM) $(TARGET)
-				$(RM) test report
+				$(RM) tests report
 
 re			:	fclean all
 
 test		:	$(SRC) $(TEST_SRC)
-				$(CC) -fprofile-arcs -ftest-coverage -Isrc/main -DMOCKING $(CFLAGS) $(CPPFLAGS) $(shell pkg-config --libs --cflags criterion) $^ -o $@
-				./$@
+				$(CC) -fprofile-arcs -ftest-coverage -Isrc/main -DMOCKING $(CFLAGS) $(CPPFLAGS) $(shell pkg-config --libs --cflags criterion) $^ -o tests
+				./tests
 
 report		:	test
 				lcov --capture --initial --directory . --output-file coverage_base.info
