@@ -20,7 +20,7 @@ $(TARGET)	:	$(OBJ)
 
 clean		:
 				$(RM) $(OBJ)
-				$(RM) *.gcda *.gcno *.info
+				$(RM) *.gcda *.gcno *.gcov *.info
 
 fclean		:	clean
 				$(RM) $(TARGET)
