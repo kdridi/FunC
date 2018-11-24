@@ -3,5 +3,6 @@ lib*.a
 *.info
 *.gcda
 *.gcno
+*.gcov
 tests
 report
