@@ -5,12 +5,12 @@
 static struct
 {
     int fd;
-    void *buf;
+    const void *buf;
     size_t nbytes;
     size_t result;
 } mock;
 
-ssize_t mock_write(int fd, void *buf, size_t nbytes)
+ssize_t mock_write(int fd, const void *buf, size_t nbytes)
 {
     mock.fd = fd;
     mock.buf = buf;

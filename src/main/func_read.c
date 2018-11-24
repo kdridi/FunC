@@ -1,14 +1,10 @@
 #include "func_read.h"
 
-#ifdef MOCKING
-#   define read mock_read
-#endif
-
-#include <sys/types.h>
-#include <sys/uio.h>
-#include <unistd.h>
 #include <stdarg.h>
 #include <assert.h>
+
+#define RETURN_TYPE size_t
+#define result (*((RETURN_TYPE*) p))
 
 int func_read(void* p, ...)
 {
@@ -25,7 +21,7 @@ int func_read(void* p, ...)
     if (r == -1)
         return (__LINE__);
 
-    *((size_t*) p) = r;
+    result = r;
 
     return (0);
 }

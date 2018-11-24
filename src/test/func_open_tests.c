@@ -1,7 +1,7 @@
 #include "func_open.h"
 
 #include <criterion/criterion.h>
-#include <fcntl.h>
+
 #include <stdarg.h>
 
 static int err;

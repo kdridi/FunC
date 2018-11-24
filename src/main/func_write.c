@@ -1,12 +1,10 @@
 #include "func_write.h"
 
-#ifdef MOCKING
-#   define write mock_write
-#endif
-
-#include <unistd.h>
 #include <stdarg.h>
 #include <assert.h>
+
+#define RETURN_TYPE size_t
+#define result (*((RETURN_TYPE*) p))
 
 int func_write(void* p, ...)
 {
@@ -23,7 +21,7 @@ int func_write(void* p, ...)
     if (r == -1)
         return (__LINE__);
 
-    *((size_t*) p) = r;
+    result = r;
 
     return (0);
 }
