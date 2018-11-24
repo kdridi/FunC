@@ -2,6 +2,10 @@ dist: xenial
 sudo: required
 language: c
 
+env:
+  global:
+    - CODECOV_TOKEN=db803219-b265-4bc8-a623-8148eba6fe94
+
 before_install:
   - sudo add-apt-repository -y ppa:snaipewastaken/ppa
   - sudo apt-get update -q
