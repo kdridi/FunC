@@ -15,10 +15,10 @@ int mock_stat(const char* path, struct stat* buf)
     mock.path = path;
     memcpy(buf, &mock.buf, sizeof(*buf));
 
-    if (path)
-        return (mock.result);
+    if (mock.path == NULL)
+        return (-1);
 
-    return (-1);
+    return (mock.result);
 }
 
 Test(func_stat, should_success)
