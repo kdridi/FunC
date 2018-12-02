@@ -11,10 +11,10 @@ int func_close(void* p, ...)
     va_end(ap);
 
     int status = close(fd);
-    assert(status >= -1);
 
     if (status == -1)
         return (__LINE__);
 
+    assert(status == 0);
     return (0);
 }
